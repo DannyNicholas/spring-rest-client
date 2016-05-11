@@ -13,6 +13,12 @@ http://www.infoq.com/articles/boot-microservices
 
 ```sh
 GET http://<host>/products
+
+Results are paginated. Optional query parameters:
+page - wanted page number - starts numbering at page 0 (default 0)
+count - products returned per page (default 10)
+order - sort direction ASC or DESC (default ASC)
+sort - field to be sorted (default productName)
 ```
 
 ### Get a Product
@@ -55,3 +61,8 @@ BODY {
 DELETE http://<host>/products/{id}
 ```
 
+### Search for a Product
+
+```sh
+GET http://<host>/search?q=<keyword>
+```
